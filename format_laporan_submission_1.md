@@ -1,4 +1,4 @@
-# Laporan Proyek Machine Learning - Rakha Putra Tamzil
+# Laporan Proyek Machine Learning - Rakha Apta Pradhana D R
 
 ## Domain Proyek
 

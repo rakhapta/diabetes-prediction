@@ -2,7 +2,7 @@
 
 ## Domain Proyek
 
-Proyek ini berfokus pada prediksi diabetes menggunakan dataset Pima Indians Diabetes. Diabetes adalah kondisi kesehatan serius yang mempengaruhi jutaan orang di seluruh dunia. Deteksi dini diabetes sangat penting untuk manajemen dan pengobatan yang efektif.
+Diabetes mellitus adalah sekelompok penyakit metabolik yang ditandai dengan kadar glukosa darah tinggi (hiperglikemia) yang diakibatkan oleh kelainan sekresi insulin, kerja insulin, atau keduanya. Deteksi dini dan diagnosis yang akurat sangat krusial untuk pengelolaan penyakit yang efektif, mencegah komplikasi akut dan kronis, serta meningkatkan kualitas hidup pasien. Komplikasi diabetes dapat mencakup penyakit kardiovaskular, kerusakan saraf (neuropati), kerusakan ginjal (nefropati), kerusakan mata (retinopati), dan masalah kaki. Mengingat dampak signifikan diabetes terhadap kesehatan individu dan sistem layanan kesehatan, pengembangan alat bantu diagnostik yang efisien dan andal menggunakan teknik machine learning menjadi sangat penting. Proyek ini bertujuan untuk membangun model prediktif yang dapat membantu mengidentifikasi individu yang berisiko tinggi menderita diabetes berdasarkan serangkaian atribut medis dan gaya hidup. Fokus utama adalah pada kemampuan model untuk meminimalkan kasus positif yang terlewat (false negative), karena kegagalan mendeteksi diabetes pada tahap awal dapat menunda intervensi yang diperlukan.
 
 ## Business Understanding
 

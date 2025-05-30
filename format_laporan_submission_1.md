@@ -1,87 +1,80 @@
-# Laporan Proyek Machine Learning - Nama Anda
+# Laporan Proyek Machine Learning - Rakha Putra Tamzil
 
 ## Domain Proyek
 
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-- Format Referensi dapat mengacu pada penulisan sitasi [IEEE](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf), [APA](https://www.mendeley.com/guides/apa-citation-guide/) atau secara umum seperti [di sini](https://penerbitdeepublish.com/menulis-buku-membuat-sitasi-dengan-mudah/)
-- Sumber yang bisa digunakan [Scholar](https://scholar.google.com/)
+Proyek ini berfokus pada prediksi diabetes menggunakan dataset Pima Indians Diabetes. Diabetes adalah kondisi kesehatan serius yang mempengaruhi jutaan orang di seluruh dunia. Deteksi dini diabetes sangat penting untuk manajemen dan pengobatan yang efektif.
 
 ## Business Understanding
 
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
-
-### Problem Statements
-
-Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+### Problem Statement
+- Bagaimana mengembangkan model machine learning yang dapat memprediksi risiko diabetes pada seseorang berdasarkan faktor-faktor kesehatan tertentu?
+- Bagaimana membandingkan performa antara model K-Nearest Neighbors (KNN) dan Random Forest dalam prediksi diabetes?
 
 ### Goals
+- Mengembangkan model prediktif yang dapat mengidentifikasi risiko diabetes dengan akurasi yang baik
+- Membandingkan dan mengevaluasi performa model KNN dan Random Forest untuk menentukan model yang lebih sesuai untuk kasus ini
 
-Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
-
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
-
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
+### Solution Approach
+- Menggunakan dua algoritma machine learning: K-Nearest Neighbors (KNN) dan Random Forest
+- Melakukan preprocessing data termasuk standardisasi fitur
+- Mengevaluasi model menggunakan berbagai metrik seperti confusion matrix dan classification report
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Dataset yang digunakan adalah Pima Indians Diabetes Database yang berisi informasi medis dari pasien wanita dengan keturunan Indian Pima.
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+### Variabel-variabel pada dataset:
+1. Pregnancies: Jumlah kehamilan
+2. Glucose: Kadar glukosa plasma
+3. BloodPressure: Tekanan darah diastolik (mm Hg)
+4. SkinThickness: Ketebalan lipatan kulit trisep (mm)
+5. Insulin: Insulin serum 2-Jam (mu U/ml)
+6. BMI: Indeks massa tubuh
+7. DiabetesPedigreeFunction: Riwayat diabetes dalam keluarga
+8. Age: Usia dalam tahun
+9. Outcome: Variabel target (1: diabetes, 0: tidak diabetes)
 
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+### Analisis Data:
+- Dataset terdiri dari 768 sampel dengan 8 fitur dan 1 variabel target
+- Tidak ada missing values dalam dataset
+- Terdapat beberapa nilai 0 yang tidak realistis untuk beberapa fitur seperti Glucose dan BloodPressure
+- Data tidak seimbang dengan lebih banyak kasus non-diabetes
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+1. Data Splitting:
+   - Data dibagi menjadi training set (80%) dan testing set (20%)
+   - Menggunakan stratified split untuk mempertahankan proporsi kelas
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+2. Standardization:
+   - Menggunakan StandardScaler untuk menormalkan fitur
+   - Fitur diubah menjadi distribusi dengan mean=0 dan variance=1
+   - Scaling diterapkan pada training dan test set secara terpisah
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+Dua model machine learning digunakan dalam proyek ini:
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+1. K-Nearest Neighbors (KNN):
+   - Menggunakan k=3 nearest neighbors
+   - Kelebihan: Sederhana, mudah diimplementasikan
+   - Kekurangan: Sensitif terhadap skala fitur, komputasi berat untuk dataset besar
+
+2. Random Forest:
+   - Menggunakan 100 trees dengan max_depth=15
+   - Kelebihan: Robust terhadap overfitting, dapat menangani fitur non-linear
+   - Kekurangan: Memerlukan lebih banyak memori, kurang interpretable
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+Evaluasi model menggunakan beberapa metrik:
+- Confusion Matrix
+- Classification Report (Accuracy, Precision, Recall, F1-Score)
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+Kedua model menunjukkan performa yang baik, dengan Random Forest sedikit lebih unggul dalam hal akurasi dan recall untuk kelas positif (diabetes).
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+## Conclusion
+- Random Forest menunjukkan performa yang lebih baik dalam prediksi diabetes
+- Standardisasi fitur sangat penting untuk performa model KNN
+- Model dapat digunakan sebagai alat screening awal untuk risiko diabetes, tetapi tidak menggantikan diagnosis medis profesional
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
-
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
-
+## Referensi
+- Dataset: Pima Indians Diabetes Database
+- Scikit-learn documentation
+- Research papers tentang prediksi diabetes menggunakan machine learning 

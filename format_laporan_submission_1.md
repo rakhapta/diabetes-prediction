@@ -90,13 +90,13 @@ Analisis distribusi setiap fitur numerik dilakukan menggunakan histogram. Dari v
 
 Untuk memahami hubungan antar fitur, dibuat heatmap dari matriks korelasi. Hasilnya menunjukkan korelasi positif yang cukup kuat antara 'Glucose', 'BMI', dan 'Age' dengan variabel target 'Outcome'.
 
-[Gambar Heatmap Korelasi]
+![Alt text](eda/heatmaps.png)
 
 4. Distribusi Variabel Target
 
 Visualisasi distribusi variabel 'Outcome' menunjukkan bahwa dataset tidak seimbang (imbalanced), dengan jumlah kasus non-diabetes (0) lebih banyak daripada kasus diabetes (1). Hal ini penting untuk diperhatikan karena dapat mempengaruhi performa dan evaluasi model.
 
-[Gambar Distribusi Variabel Outcome]
+![Alt text](eda/distribution.png)
 
 ## Data Preparation  
 1. Data Cleaning/Pembersihan Data (Handling Zero Values):

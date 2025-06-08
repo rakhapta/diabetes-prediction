@@ -20,7 +20,9 @@ Diabetes mellitus adalah sekelompok penyakit metabolik yang ditandai dengan kada
 - Mengevaluasi model menggunakan berbagai metrik seperti confusion matrix dan classification report
 
 ## Data Understanding
-Dataset yang digunakan adalah Pima Indians Diabetes Database yang berisi informasi medis dari pasien wanita dengan keturunan Indian Pima.
+Dataset yang digunakan dalam proyek ini adalah Pima Indians Diabetes Database, yang aslinya berasal dari National Institute of Diabetes and Digestive and Kidney Diseases. Tujuan utama dari dataset ini adalah untuk memprediksi secara diagnostik apakah seorang pasien menderita diabetes atau tidak, berdasarkan pengukuran diagnostik tertentu. Terdapat batasan spesifik dalam pemilihan data ini dari database yang lebih besar, yaitu semua pasien adalah wanita berusia minimal 21 tahun dari keturunan Indian Pima(Pima Indian Heritage).
+
+Sumber Data: https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
 
 ### Variabel-variabel pada dataset:
 1. Pregnancies: Jumlah kehamilan

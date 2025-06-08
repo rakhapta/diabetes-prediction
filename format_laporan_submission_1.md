@@ -2,7 +2,23 @@
 
 ## Domain Proyek
 
-Diabetes mellitus adalah sekelompok penyakit metabolik yang ditandai dengan kadar glukosa darah tinggi (hiperglikemia) yang diakibatkan oleh kelainan sekresi insulin, kerja insulin, atau keduanya. Deteksi dini dan diagnosis yang akurat sangat krusial untuk pengelolaan penyakit yang efektif, mencegah komplikasi akut dan kronis, serta meningkatkan kualitas hidup pasien. Komplikasi diabetes dapat mencakup penyakit kardiovaskular, kerusakan saraf (neuropati), kerusakan ginjal (nefropati), kerusakan mata (retinopati), dan masalah kaki. Mengingat dampak signifikan diabetes terhadap kesehatan individu dan sistem layanan kesehatan, pengembangan alat bantu diagnostik yang efisien dan andal menggunakan teknik machine learning menjadi sangat penting. Proyek ini bertujuan untuk membangun model prediktif yang dapat membantu mengidentifikasi individu yang berisiko tinggi menderita diabetes berdasarkan serangkaian atribut medis dan gaya hidup. Fokus utama adalah pada kemampuan model untuk meminimalkan kasus positif yang terlewat (false negative), karena kegagalan mendeteksi diabetes pada tahap awal dapat menunda intervensi yang diperlukan.
+Diabetes mellitus adalah sekelompok penyakit metabolik kronis yang ditandai dengan kadar glukosa darah tinggi (hiperglikemia) yang berkelanjutan. Kondisi ini timbul akibat kelainan pada sekresi insulin, kerja insulin (resistensi insulin), atau keduanya. Menurut International Diabetes Federation (IDF), pada tahun 2021, diperkirakan 537 juta orang dewasa (20-79 tahun) hidup dengan diabetes di seluruh dunia, dan angka ini diproyeksikan meningkat menjadi 643 juta pada tahun 2030 dan 783 juta pada tahun 2045 [1]. Di Indonesia, Riset Kesehatan Dasar (Riskesdas) 2018 menunjukkan prevalensi diabetes melitus pada penduduk usia ≥15 tahun sebesar 2% [2].
+
+**Mengapa dan Bagaimana Masalah Harus Diselesaikan:**
+Deteksi dini dan diagnosis diabetes yang akurat sangat krusial karena beberapa alasan utama:
+1.  **Pencegahan Komplikasi:** Diabetes yang tidak terdiagnosis atau tidak terkontrol dengan baik dapat menyebabkan komplikasi serius jangka panjang, seperti penyakit kardiovaskular (penyakit jantung koroner, stroke), kerusakan saraf (neuropati diabetik), penyakit ginjal kronis (nefropati diabetik) yang dapat berujung pada gagal ginjal, kerusakan mata (retinopati diabetik) yang dapat menyebabkan kebutaan, dan masalah kaki (ulkus diabetik) yang dapat berujung pada amputasi [3]. Intervensi dini melalui perubahan gaya hidup dan/atau pengobatan dapat secara signifikan mengurangi risiko komplikasi ini.
+2.  **Peningkatan Kualitas Hidup:** Manajemen diabetes yang efektif memungkinkan individu untuk menjalani hidup yang lebih sehat dan produktif.
+3.  **Pengurangan Beban Sistem Kesehatan:** Biaya perawatan komplikasi diabetes jauh lebih tinggi dibandingkan biaya pencegahan dan manajemen dini. Deteksi dini dapat mengurangi kebutuhan akan perawatan yang mahal dan kompleks di kemudian hari.
+
+Masalah ini dapat diselesaikan dengan mengembangkan sistem pendukung keputusan klinis berbasis machine learning. Model machine learning dapat menganalisis pola kompleks dalam data pasien (atribut medis dan gaya hidup) untuk mengidentifikasi individu yang berisiko tinggi menderita diabetes. Sistem seperti ini dapat berfungsi sebagai alat skrining awal yang efisien, membantu tenaga medis memprioritaskan pasien untuk pemeriksaan lebih lanjut dan intervensi preventif.
+
+**Hasil Riset Terkait atau Referensi:**
+Banyak penelitian telah mengeksplorasi penggunaan machine learning untuk prediksi diabetes. Sebagai contoh:
+* Maniruzzaman et al. (2018) mengembangkan model prediksi diabetes menggunakan beberapa algoritma machine learning dan menemukan bahwa Random Forest mencapai akurasi yang tinggi [4].
+* Sisodia & Sisodia (2018) melakukan studi perbandingan berbagai algoritma klasifikasi untuk prediksi diabetes dan menyoroti pentingnya pemilihan fitur [5].
+* Penelitian lain juga menunjukkan potensi algoritma seperti Support Vector Machines (SVM), Logistic Regression, dan Neural Networks dalam domain ini, seringkali dengan fokus pada peningkatan akurasi dan interpretasi model [6].
+
+Pengembangan model yang tidak hanya akurat tetapi juga memiliki recall yang tinggi untuk kasus positif (mendeteksi penderita diabetes) sangat penting, mengingat konsekuensi dari false negative (pasien diabetes yang terlewat) lebih berat.
 
 ## Business Understanding
 
@@ -77,6 +93,8 @@ Kedua model menunjukkan performa yang baik, dengan Random Forest sedikit lebih u
 - Model dapat digunakan sebagai alat screening awal untuk risiko diabetes, tetapi tidak menggantikan diagnosis medis profesional
 
 ## Referensi
-- Dataset: Pima Indians Diabetes Database
-- Scikit-learn documentation
-- Research papers tentang prediksi diabetes menggunakan machine learning 
+[1] International Diabetes Federation. *IDF Diabetes Atlas, 10th edn.* Brussels, Belgium: 2021. Tersedia: (https://www.diabetesatlas.org)
+[2] Kementerian Kesehatan Republik Indonesia. *Laporan Nasional Riskesdas 2018.* Jakarta: Lembaga Penerbit Badan Penelitian dan Pengembangan Kesehatan, 2019.
+[3] American Diabetes Association. "Standards of Medical Care in Diabetes—2023." *Diabetes Care*, vol. 46, Supplement 1, 2023.
+[4] Maniruzzaman, M., Rahman, M. J., Al-MehediHasan, M., Suri, H. S., Abedin, M. M., El-Baz, A., ... & Suri, J. S. (2018). "Accurate diabetes risk stratification using machine learning: role of missing value and outliers." *Journal of medical systems*, 42(5), 1-15.
+[5] Sisodia, D., & Sisodia, D. S. (2018). "Prediction of diabetes using classification algorithms." *Procedia computer science*, 132, 1578-1585.

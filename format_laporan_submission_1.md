@@ -84,7 +84,7 @@ Proses EDA dilakukan untuk memahami data lebih dalam, termasuk struktur, distrib
 2. Analisis Univariate
 Analisis distribusi setiap fitur numerik dilakukan menggunakan histogram. Dari visualisasi ini, terlihat bahwa sebagian besar fitur memiliki distribusi yang tidak normal (skewed).
 
-[eda/histograms.png](https://github.com/rakhapta/diabetes-prediction/blob/0702d34568a2d4d59f9f06f6e75729d04ab0d85a/eda/histograms.png)
+![Alt text](eda/histograms.png)
 
 3. Analisis Multivariate (Korelasi Fitur)
 

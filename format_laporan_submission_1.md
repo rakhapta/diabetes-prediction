@@ -27,15 +27,11 @@ Pengembangan model yang tidak hanya akurat tetapi juga memiliki recall yang ting
 Proses klarifikasi masalah dalam proyek ini bertujuan untuk mendefinisikan dengan jelas tantangan yang dihadapi dan tujuan yang ingin dicapai melalui pengembangan model machine learning untuk prediksi diabetes.
 
 ### Problem Statements
-
-*(Uraikan pernyataan masalah berdasarkan analisis Anda di notebook AAA.ipynb)*
 1.  Bagaimana cara mengembangkan model machine learning yang mampu memprediksi secara akurat dan andal kemungkinan seseorang menderita diabetes berdasarkan serangkaian fitur klinis dan demografis yang tersedia, dengan mempertimbangkan tingginya prevalensi dan dampak serius dari diabetes?
 2.  Di antara algoritma klasifikasi yang umum digunakan seperti K-Nearest Neighbors (KNN) dan Random Forest, manakah yang menunjukkan performa lebih superior, khususnya dalam hal kemampuan mengidentifikasi kasus diabetes yang sebenarnya (recall tinggi untuk kelas positif), setelah dilakukan proses optimasi hyperparameter untuk dataset yang digunakan?
 3.  Bagaimana memastikan model yang dikembangkan dapat diandalkan sebagai alat bantu skrining awal yang efektif, dengan meminimalkan risiko kesalahan diagnosis, terutama kasus false negative (pasien diabetes tidak terdeteksi) yang memiliki konsekuensi kesehatan lebih berat?
 
 ### Goals
-
-*(Uraikan tujuan yang ingin dicapai untuk menjawab problem statements di atas, sesuai dengan proyek Anda di AAA.ipynb)*
 1.  Membangun dan melatih model klasifikasi menggunakan algoritma K-Nearest Neighbors (KNN) dan Random Forest untuk memprediksi status diabetes berdasarkan dataset yang tersedia.
 2.  Melakukan optimasi hyperparameter pada kedua model (KNN dan Random Forest) untuk meningkatkan kinerja prediktifnya, dengan fokus utama pada peningkatan metrik recall untuk kelas positif (mendeteksi penderita diabetes).
 3.  Mengevaluasi dan membandingkan secara komprehensif performa kedua model yang telah dioptimasi menggunakan serangkaian metrik evaluasi yang relevan (akurasi, presisi, recall, F1-score, dan analisis confusion matrix), dengan penekanan khusus pada recall untuk kelas positif.
@@ -76,11 +72,31 @@ Sumber Data: https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-databas
 8. Age: Usia dalam tahun
 9. Outcome: Variabel target (1: diabetes, 0: tidak diabetes)
 
-### Analisis Data:
-- Dataset terdiri dari 768 sampel dengan 8 fitur prediktor medis dan 1 variabel target (Outcome).  
-- Tidak ditemukan missing values pada dataset.  
-- Ditemukan beberapa nilai 0 yang tidak logis pada beberapa fitur seperti 'Glucose', 'BloodPressure', 'BMI', 'SkinThickness', dan 'Insulin', yang seharusnya tidak mungkin bernilai nol secara medis.  
-- Distribusi data target tidak seimbang, di mana jumlah pasien non-diabetes (0) lebih banyak daripada pasien diabetes (1). Hal ini perlu diperhatikan karena dapat mempengaruhi performa model.  
+### Exploratory Data Analysis (EDA):
+Proses EDA dilakukan untuk memahami data lebih dalam, termasuk struktur, distribusi, dan hubungan antar variabel.
+
+1. Informasi dan Statistik Deskriptif
+
+- Dataset terdiri dari 768 sampel dan 9 kolom.
+- Tidak ditemukan nilai yang hilang (missing values).
+- Statistik deskriptif awal menunjukkan adanya nilai 0 yang tidak logis pada beberapa fitur seperti 'Glucose', 'BloodPressure', 'BMI', 'SkinThickness', dan 'Insulin', yang secara medis tidak mungkin terjadi.
+
+2. Analisis Univariate
+Analisis distribusi setiap fitur numerik dilakukan menggunakan histogram. Dari visualisasi ini, terlihat bahwa sebagian besar fitur memiliki distribusi yang tidak normal (skewed).
+
+[eda/histograms.png](https://github.com/rakhapta/diabetes-prediction/blob/0702d34568a2d4d59f9f06f6e75729d04ab0d85a/eda/histograms.png)
+
+3. Analisis Multivariate (Korelasi Fitur)
+
+Untuk memahami hubungan antar fitur, dibuat heatmap dari matriks korelasi. Hasilnya menunjukkan korelasi positif yang cukup kuat antara 'Glucose', 'BMI', dan 'Age' dengan variabel target 'Outcome'.
+
+[Gambar Heatmap Korelasi]
+
+4. Distribusi Variabel Target
+
+Visualisasi distribusi variabel 'Outcome' menunjukkan bahwa dataset tidak seimbang (imbalanced), dengan jumlah kasus non-diabetes (0) lebih banyak daripada kasus diabetes (1). Hal ini penting untuk diperhatikan karena dapat mempengaruhi performa dan evaluasi model.
+
+[Gambar Distribusi Variabel Outcome]
 
 ## Data Preparation  
 1. Data Cleaning/Pembersihan Data (Handling Zero Values):
